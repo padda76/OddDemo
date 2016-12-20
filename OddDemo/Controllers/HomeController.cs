@@ -10,7 +10,7 @@ namespace OddDemo.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Odd's demo page";
 
             return View();
         }
