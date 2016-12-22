@@ -16,7 +16,7 @@ namespace OddDemo.Migrations
         protected override void Seed(OddDemo.Models.OddDemoContext context)
         {
             context.People.AddOrUpdate(x => x.Id,
-                new Person() { Id = 1, FName = "Odd Andreas", LName="Hartvigsen", Email="odd.hartvigsen", Phone="99692272"},
+                new Person() { Id = 1, FName = "Odd Andreas", LName="Hartvigsen", Email="odd.hartvigsen@gmail.com", Phone="99692272"},
                 new Person() { Id = 2, FName = "Kari", LName = "Normann", Email = "kn@me.com", Phone = "55566777"},
                 new Person() { Id = 3, FName = "Freddy", LName = "Krueger", Email = "fk@hotmail.com", Phone = "40040555"}
                 );

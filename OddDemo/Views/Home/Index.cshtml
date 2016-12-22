@@ -6,7 +6,7 @@
 <div class="page-header">
     <h1>PeopleService</h1>
 </div>
-<!--<div><h1 data-bind="text: activperson"></h1></div>-->
+
 <div class="row">
     <!--PersonList-->
     <div class="col-md-6">
@@ -35,7 +35,7 @@
     <div id="detaildiv" class="col-md-4">
         <div id="sd" class="panel panel-default">
             <div class="panel-heading">
-                <h2 class="panel-title">PersonDetail</h2>
+                <h2 class="panel-title" id="detailheader">PersonDetail</h2>
             </div>
             <table class="table">
                 <tr><td>E-mail</td><td data-bind="text: peopledetail().Email"></td></tr>
@@ -52,7 +52,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading" class="col-lg-2">
-                <h2 class="panel-title">Positions for Person</h2>
+                <h2 class="panel-title" id="positionsheader">Positions for Person</h2>
             </div>
             <table>
                 <thead>
@@ -81,7 +81,7 @@
         </div>
     </div>
 </div>
-<div data-bind="visible: message"><p data-bind="text: message"></p></div>
+<div id="positionmessage"></div>
 <p>Modify and delete is not yet implemented</p>
 <div class="row">
     <!--Add position-->
@@ -178,28 +178,3 @@
         <div class="alert" data-bind="visible: message"><p data-bind="text: message"></p></div>
     </div>
 </div>
-
-<!--Show Positions for Person
-<div class="row" data-bind="visible: showTable">
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title">Positions for Person</h2>
-            </div>
-            <table>
-                <thead>
-                    <tr><th>Title</th><th>Department</th></tr>
-                </thead>
-                <tbody data-bind="foreach: positionsdetail">
-                    <tr>
-                        <td data-bind="text: Title"></td>
-                        <td data-bind="text: Department"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <small><a href="#" data-bind="click: hideTable">Hide table</a></small>
-        </div>
-    </div>
-</div>
-
-    -->

@@ -1,7 +1,6 @@
 
 var ViewModel = function () {
     var self = this;
-    self.activperson = ko.observable();
     self.people = ko.observableArray();
     self.error = ko.observable();
     self.message = ko.observable();
@@ -52,6 +51,7 @@ var ViewModel = function () {
         ajaxHelper(peopleUri + item.Id, 'GET').done(function (data) {
             self.peopledetail(data);
             self.activperson = item.FName;
+            $("#detailheader").text('Details (' + item.FName + ' ' + item.LName+')');
         });
     };
 
@@ -64,11 +64,13 @@ var ViewModel = function () {
     self.getPositionsDetail = function (item) {
         ajaxHelper(positionsUri + item.Id, 'GET').done(function (data) {
             self.positionsdetail(data);
-            if (data){
+            if (Object.keys(data).length>0) {
                 self.showTable(true);
+                $("#positionsheader").text('Positions for ' + item.FName + ' ' + item.LName);
             }
             else {
-                self.message="No registered positions for person."
+                $("#positionmessage").text('No registered positions for ' + item.FName + ' ' + item.LName);
+                self.showTable(false);
             }
         });
     };
@@ -124,6 +126,7 @@ var ViewModel = function () {
             self.people.pop(data);
         });
     };
+
 
     // Set initial data.
     self.showTable === false;
